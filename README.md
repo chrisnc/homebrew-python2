@@ -1,4 +1,4 @@
-# Chrisnc Python2
+# Homebrew Python2
 
 ## How do I install these formulae?
 
