@@ -63,6 +63,11 @@ class PythonAT2 < Formula
       --datadir=#{share}
       --enable-framework=#{frameworks}
       --without-ensurepip
+      --with-dbmliborder=gdbm:ndbm
+      --enable-optimizations
+      --with-lto
+      --with-system-expat
+      --with-system-ffi
     ]
 
     # See upstream bug report from 22 Jan 2018 "Significant performance problems
@@ -75,6 +80,18 @@ class PythonAT2 < Formula
     end
 
     args << "--without-gcc" if ENV.compiler == :clang
+
+    on_macos do
+      args << "--enable-framework=#{frameworks}"
+      args << "--with-dtrace"
+
+      # Override LLVM_AR to be plain old system ar.
+      # https://bugs.python.org/issue43109
+      args << "LLVM_AR=/usr/bin/ar"
+    end
+    on_linux do
+      args << "--enable-shared"
+    end
 
     cflags   = []
     ldflags  = []
