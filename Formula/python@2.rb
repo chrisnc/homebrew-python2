@@ -1,4 +1,4 @@
-class PythonAT2718 < Formula
+class PythonAT2 < Formula
   desc "Interpreted, interactive, object-oriented programming language"
   homepage "https://www.python.org/"
   url "https://www.python.org/ftp/python/2.7.18/Python-2.7.18.tar.xz"
