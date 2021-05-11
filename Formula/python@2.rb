@@ -70,17 +70,6 @@ class PythonAT2 < Formula
       --with-system-ffi
     ]
 
-    # See upstream bug report from 22 Jan 2018 "Significant performance problems
-    # with Python 2.7 built with clang 3.x or 4.x"
-    # https://bugs.python.org/issue32616
-    # https://github.com/Homebrew/homebrew-core/issues/22743
-    if DevelopmentTools.clang_build_version >= 802 &&
-       DevelopmentTools.clang_build_version < 902
-      args << "--without-computed-gotos"
-    end
-
-    args << "--without-gcc" if ENV.compiler == :clang
-
     on_macos do
       args << "--enable-framework=#{frameworks}"
       args << "--with-dtrace"
