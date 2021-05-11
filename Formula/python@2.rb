@@ -97,7 +97,7 @@ class PythonAT2 < Formula
       cflags  << "-I#{MacOS.sdk_path}/System/Library/Frameworks/Tk.framework/Versions/8.5/Headers"
     end
 
-    # Avoid linking to libgcc https://code.activestate.com/lists/python-dev/112195/
+    # Avoid linking to libgcc https://mail.python.org/pipermail/python-dev/2012-February/116205.html
     args << "MACOSX_DEPLOYMENT_TARGET=#{MacOS.full_version}"
 
     # We want our readline and openssl! This is just to outsmart the detection code,
