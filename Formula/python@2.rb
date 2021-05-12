@@ -5,6 +5,7 @@ class PythonAT2 < Formula
   sha256 "4d43f033cdbd0aa7b7023c81b0e986fd11e653b5248dac9144d508f11812ba41"
   revision 1
   head "https://github.com/python/cpython.git", branch: "2.7"
+  license "Python-2.0"
 
   # setuptools remembers the build flags python is built with and uses them to
   # build packages later. Xcode-only systems need different flags.
