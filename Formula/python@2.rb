@@ -65,7 +65,6 @@ class PythonAT2 < Formula
       --enable-ipv6
       --datarootdir=#{share}
       --datadir=#{share}
-      --enable-framework=#{frameworks}
       --without-ensurepip
       --with-dbmliborder=gdbm:ndbm
       --enable-optimizations
