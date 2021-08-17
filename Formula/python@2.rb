@@ -74,7 +74,6 @@ class PythonAT2 < Formula
 
     on_macos do
       args << "--enable-framework=#{frameworks}"
-      args << "--with-dtrace"
 
       # Override LLVM_AR to be plain old system ar.
       # https://bugs.python.org/issue43109
