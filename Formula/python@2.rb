@@ -6,6 +6,10 @@ class PythonAT2 < Formula
   license "Python-2.0"
   head "https://github.com/python/cpython.git", branch: "2.7"
 
+  bottle do
+    sha256 catalina: "3b3dc33c8b3447d99f4bc47c9afc9ec651b6d02add36f891bfa94de7c9694cf9"
+  end
+
   # setuptools remembers the build flags python is built with and uses them to
   # build packages later. Xcode-only systems need different flags.
   pour_bottle? do
