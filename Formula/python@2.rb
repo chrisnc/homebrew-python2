@@ -9,7 +9,7 @@ class PythonAT2 < Formula
   # setuptools remembers the build flags python is built with and uses them to
   # build packages later. Xcode-only systems need different flags.
   pour_bottle? do
-    on_macos do
+    if OS.mac?
       reason <<~EOS
         The bottle needs the Apple Command Line Tools to be installed.
           You can install them, if desired, with:
@@ -72,15 +72,12 @@ class PythonAT2 < Formula
       --with-system-ffi
     ]
 
-    on_macos do
+    if OS.mac?
       args << "--enable-framework=#{frameworks}"
 
       # Override LLVM_AR to be plain old system ar.
       # https://bugs.python.org/issue43109
       args << "LLVM_AR=/usr/bin/ar"
-    end
-    on_linux do
-      args << "--enable-shared"
     end
 
     cflags   = []
