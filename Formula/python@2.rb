@@ -9,7 +9,7 @@ class PythonAT2 < Formula
   # setuptools remembers the build flags python is built with and uses them to
   # build packages later. Xcode-only systems need different flags.
   pour_bottle? do
-    on_macos do
+    if OS.mac?
       reason <<~EOS
         The bottle needs the Apple Command Line Tools to be installed.
           You can install them, if desired, with:
