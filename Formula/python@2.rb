@@ -72,15 +72,12 @@ class PythonAT2 < Formula
       --with-system-ffi
     ]
 
-    on_macos do
+    if OS.mac?
       args << "--enable-framework=#{frameworks}"
 
       # Override LLVM_AR to be plain old system ar.
       # https://bugs.python.org/issue43109
       args << "LLVM_AR=/usr/bin/ar"
-    end
-    on_linux do
-      args << "--enable-shared"
     end
 
     cflags   = []
